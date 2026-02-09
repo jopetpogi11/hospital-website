@@ -1,0 +1,52 @@
+<?php
+session_start();
+include "../config.php";
+
+if (!isset($_SESSION['admin'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+    <h2>Admin Dashboard</h2>
+    <a href="logout.php" style="color:white;">Logout</a>
+</header>
+
+<section>
+    <h3>Appointments</h3>
+
+    <table border="1" width="100%" cellpadding="10">
+        <tr>
+            <th>Patient</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Department</th>
+            <th>Date</th>
+        </tr>
+
+        <?php
+        $result = mysqli_query($conn, "SELECT * FROM appointments ORDER BY created_at DESC");
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<tr>
+                    <td>{$row['patient_name']}</td>
+                    <td>{$row['email']}</td>
+                    <td>{$row['phone']}</td>
+                    <td>{$row['department']}</td>
+                    <td>{$row['appointment_date']}</td>
+                  </tr>";
+        }
+        ?>
+    </table>
+</section>
+
+</body>
+</html>

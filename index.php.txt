@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CityCare Multispeciality Hospital</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>CityCare Multispeciality Hospital</h1>
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#appointment">Appointment</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Trusted Healthcare Since 1998</h2>
+    <p>24x7 Emergency | NABH Accredited | Expert Doctors</p>
+</section>
+
+<section id="services">
+    <h2>Departments</h2>
+    <div class="grid">
+        <div>Emergency & Trauma</div>
+        <div>Cardiology</div>
+        <div>Orthopedics</div>
+        <div>Pediatrics</div>
+        <div>Radiology</div>
+        <div>ICU & Critical Care</div>
+    </div>
+</section>
+
+<section id="appointment">
+    <h2>Book Appointment</h2>
+    <form action="appointment.php" method="POST">
+        <input type="text" name="name" placeholder="Patient Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="phone" placeholder="Phone Number" required>
+        <select name="department" required>
+            <option value="">Select Department</option>
+            <option>Cardiology</option>
+            <option>Orthopedics</option>
+            <option>Pediatrics</option>
+            <option>General Medicine</option>
+        </select>
+        <input type="date" name="date" required>
+        <button type="submit">Book Appointment</button>
+    </form>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <form action="contact.php" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Message"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 CityCare Hospital | Emergency: +91 98765 43210</p>
+</footer>
+
+</body>
+</html>

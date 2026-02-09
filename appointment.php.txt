@@ -1,0 +1,19 @@
+<?php
+include "config.php";
+
+$name = $_POST['name'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$department = $_POST['department'];
+$date = $_POST['date'];
+
+$sql = "INSERT INTO appointments 
+(patient_name, email, phone, department, appointment_date)
+VALUES ('$name', '$email', '$phone', '$department', '$date')";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Appointment booked successfully!";
+} else {
+    echo "Error: " . mysqli_error($conn);
+}
+?>
